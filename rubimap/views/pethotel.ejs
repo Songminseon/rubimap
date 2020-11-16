@@ -34,7 +34,7 @@
 </head>
 <body>
   <div id="navbar">
-    루비맵
+    루비호텔
   </div>
   <div id="search">
     <div>
@@ -43,9 +43,9 @@
       </label>
   <input type="checkbox" id="toggle_button">
   <div id="toggle_contents">
-    <div class="">
-      <a href="/">전체보기</a>
-    </div>
+      <div class="">
+        <a href="/">전체보기</a>
+      </div>
       <div class="">
         <a href="petshop">펫샵</a>
       </div>
@@ -93,6 +93,8 @@
 
     for (var i in data){
       var target = data[i];
+      var category = data[i]['category'];
+      if (category === "펫호텔"){
       var latlng = new naver.maps.LatLng(target.lat, target.lng);
       marker = new naver.maps.Marker({
         map:map,
@@ -130,6 +132,7 @@
       infowindowList.push(infowindow)
       detailInfowindowList.push(content2)
     }
+  }
 
   
     for (var i=0, ii=markerList.length; i<ii; i++){

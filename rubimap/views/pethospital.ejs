@@ -34,7 +34,7 @@
 </head>
 <body>
   <div id="navbar">
-    루비맵
+    루비병원 루비 아프지마
   </div>
   <div id="search">
     <div>
@@ -93,6 +93,8 @@
 
     for (var i in data){
       var target = data[i];
+      var category = data[i]['category'];
+      if (category === "동물병원"){
       var latlng = new naver.maps.LatLng(target.lat, target.lng);
       marker = new naver.maps.Marker({
         map:map,
@@ -130,6 +132,7 @@
       infowindowList.push(infowindow)
       detailInfowindowList.push(content2)
     }
+  }
 
   
     for (var i=0, ii=markerList.length; i<ii; i++){
